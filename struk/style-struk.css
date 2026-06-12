@@ -1,0 +1,226 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #ffffff;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --accent: #b6895b;
+    --border-dash: #cbd5e1;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 60px 20px;
+}
+
+/* PEMBUNGKUS UTAMA */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* FIXED Jarak renggang yang lu minta, diset ke 80px biar makin cihuy dan luas */
+    gap: 80px; 
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+/* DESAIN KARTU INPUT */
+.input-card {
+    background-color: var(--card-bg);
+    color: var(--text-dark);
+    padding: 30px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.input-card h3 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: var(--accent);
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.form-group input, .form-group select {
+    padding: 12px;
+    border: 1px solid var(--border-dash);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--accent);
+}
+
+.btn-tambah {
+    width: 100%;
+    padding: 12px;
+    background-color: #10b981; /* Warna hijau biar keliatan tombol eksekusi positif */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-tambah:hover {
+    background-color: #059669;
+}
+
+.btn-reset {
+    width: 100%;
+    padding: 10px;
+    background-color: #ef4444; /* Merah buat reset */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* DESAIN KARTU OUTPUT (STRUK) */
+.receipt-card {
+    background-color: var(--card-bg);
+    color: var(--text-dark);
+    width: 100%;
+    max-width: 380px;
+    padding: 35px 30px;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.receipt-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 10px;
+    background-image: linear-gradient(-45deg, var(--bg-color) 5px, transparent 0), linear-gradient(45deg, var(--bg-color) 5px, transparent 0);
+    background-position: left bottom;
+    background-size: 10px 10px;
+    background-repeat: repeat-x;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 1px;
+}
+
+.header p {
+    margin: 5px 0 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.divider {
+    border-top: 2px dashed var(--border-dash);
+    margin: 20px 0;
+}
+
+.item-list, .summary-table {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.05rem;
+}
+
+.item-row, .summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.item-name {
+    flex: 1;
+    padding-right: 10px;
+}
+
+.item-price {
+    font-weight: 600;
+}
+
+.promo-text {
+    font-size: 0.9rem;
+    color: #ef4444;
+    padding-left: 15px;
+    margin-top: -4px;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.summary-row.total-row {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.patungan-box {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.patungan-title {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.patungan-amount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #10b981;
+    margin-top: 5px;
+}
+
+.footer-thanks {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 35px;
+}
+
+/* Responsif buat layar HP */
+@media (max-width: 860px) {
+    .container {
+        gap: 40px;
+    }
+}
